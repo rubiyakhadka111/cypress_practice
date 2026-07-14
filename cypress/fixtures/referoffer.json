@@ -1,0 +1,13 @@
+[{
+    "fullname": "Rubiya",
+    "message": "Please enter full name (first and last)",
+    "type": "invalid",
+    "number": "1234",
+    "email": "rubi123"
+},
+{
+    "fullname": "Rubiya Khadka",
+    "type": "valid",
+    "number": "9841220416",
+    "email": "rubiyakhadka111@gmail.com"
+}]

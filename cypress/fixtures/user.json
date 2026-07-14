@@ -1,0 +1,37 @@
+[
+  {
+    "username": "Chhabimaharjan",
+    "password": "d69jJy",
+    "type": "valid"
+  },
+  {
+    "username": "aakashduwal",
+    "password": "Duwals@77",
+    "type": "valid"
+  },
+  {
+    "username": "rubi",
+    "password": "Hello12",
+    "type": "invalid"
+  },
+  {
+    "username": "qawa",
+    "password": "1qaw2",
+    "type": "invalid"
+  },
+  {
+    "username": "",
+    "password": "",
+    "type": "missing"
+  },
+  {
+    "username": "Chhabimaharjan",
+    "password": "",
+    "type": "missing"
+  },
+  {
+    "username": "",
+    "password": "aqqa",
+    "type": "missing"
+  }
+]
