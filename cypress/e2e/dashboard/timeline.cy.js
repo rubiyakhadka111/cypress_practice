@@ -20,6 +20,8 @@ describe('Timeline', () =>{
         
         cy.intercept('POST', '**/v1/auth/login').as('login')
 
+        cy.intercept('GET', '**/user_activities*').as('activities')
+
         cy.wait('@login')
         .its('response.statusCode')
         .should('eq', 200)
@@ -28,6 +30,11 @@ describe('Timeline', () =>{
         .should('eq', '/')
 
         timeline.timelinePage()
+
+        cy.wait('@activities')
+        .its('response.statusCode')
+        .should('eq', 200)
+
 
         timeline.previousButton(20)
         timeline.todayButton()
