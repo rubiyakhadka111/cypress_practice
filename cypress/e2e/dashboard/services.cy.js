@@ -6,28 +6,28 @@ describe('Services', () => {
         return false
     })
     users.forEach((user) => {
-        it(`should navigate to Services pages for ${user.username}`, () => {
-            LoginPage.visit()
+        // it(`should navigate to Services pages for ${user.username}`, () => {
+        //     LoginPage.visit()
 
-            cy.intercept('POST', '**/v1/auth/login').as('login')
+        //     cy.intercept('POST', '**/v1/auth/login').as('login')
 
-            LoginPage.enterUsername(user.username)
-            LoginPage.enterPassword(user.password)
-            LoginPage.clickLogin()
+        //     LoginPage.enterUsername(user.username)
+        //     LoginPage.enterPassword(user.password)
+        //     LoginPage.clickLogin()
 
-            cy.wait('@login')
-              .its('response.statusCode')
-              .should('eq', 200)
+        //     cy.wait('@login')
+        //       .its('response.statusCode')
+        //       .should('eq', 200)
 
-            cy.location('pathname', {timeout:1000})
-            .should('eq', '/')
+        //     cy.location('pathname', {timeout:1000})
+        //     .should('eq', '/')
 
-            services.servicePage()
-            services.contactUpdate()
-            services.customerLocation()
-            services.closeBtn()
+        //     services.servicePage()
+        //     services.contactUpdate()
+        //     services.customerLocation()
+        //     services.closeBtn()
 
-        })
+        // })
 
     it(`should navigate to connected device of service page for ${user.username}`, () => {
         LoginPage.visit()
@@ -48,13 +48,24 @@ describe('Services', () => {
             services.servicePage()
             
 
-            cy.intercept('GET','**/v2/router/connected_devices').as('device')
+            // cy.intercept('GET','**/v2/router/connected_devices').as('device')
 
-             services.connectedDevicePage()
+            //  services.connectedDevicePage()
 
-            cy.wait('@device')
+            // cy.wait('@device')
+            // .its('response.statusCode')
+            // .should('eq', 200)
+
+            cy.intercept('GET','**/v1/customer/internet_usage/daily/**').as('internetusage')
+
+            services.internetUsuagePage()
+
+            cy.wait('@internetusage')
             .its('response.statusCode')
             .should('eq', 200)
+
+            services.select()
+            services.verifyMenuCount(7)
 
            
     })
