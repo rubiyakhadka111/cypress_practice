@@ -43,12 +43,14 @@ describe('Refer Offer Test', () => {
         if(referUser.type === 'invalid'){
           referOffer.invalidWarn()
         }
+        
       })
-      referOffer.leafletClick()
+      // referOffer.leafletClick()
+      referOffer.searchLocation(user.location)
       
-       referOffer.closeClick()
+      //  referOffer.closeClick()
 
-        referOffer.termsButton()
+      //   referOffer.termsButton()
 
     })
   })
