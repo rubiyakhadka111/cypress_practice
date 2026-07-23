@@ -5,7 +5,8 @@ class referOffer{
         emailEnter: () => cy.get('input[name="email"]'),
 
         leaflet: () => cy.get('.leaflet-container'),
-        close: () => cy.get('button[aria-label="close"]')
+        close: () => cy.get('button[aria-label="close"]'),
+        search: () => cy.get('.glass')
     }
     visit(){
         cy.visit('eservice-login')
@@ -40,10 +41,16 @@ class referOffer{
           cy.contains('p', 'Please enter a valid mobile number')
           cy.contains('p', 'Please enter a valid email address')
     }
+    searchLocation(location){
+        this.elements.search()
+        .click()
+        .clear()
+        .type(`${location}{enter}`)
+    }
     leafletClick(){
         this.elements.leaflet()
         .should('be.visible')
-        .click()
+        .click(240, 200)
     }
     closeClick(){
         this.elements.close()

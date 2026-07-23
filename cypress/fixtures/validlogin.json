@@ -1,7 +1,9 @@
 [{
     "username": "Chhabimaharjan",
-    "password": "d69jJy"
+    "password": "d69jJy",
+    "location": "kathmandu"
 },{
     "username": "aakashduwal",
-    "password": "Duwals@77"
+    "password": "Duwals@77",
+    "location": "bhaktapur"
 }]
